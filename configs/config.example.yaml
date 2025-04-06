@@ -1,0 +1,41 @@
+# 업비트 트레이딩 봇 설정 파일
+
+# 업비트 API 설정
+upbit:
+  access_key: "YOUR_API_ACCESS_KEY"
+  secret_key: "YOUR_API_SECRET_KEY"
+  base_url: "https://api.upbit.com/v1"
+  ws_base_url: "wss://api.upbit.com/websocket/v1"
+
+# 데이터베이스 설정
+database:
+  driver: "postgres"
+  host: "localhost"
+  port: 5432
+  username: "upbit_user"
+  password: "your_password"
+  dbname: "upbit_trader"
+  sslmode: "disable"
+
+# 서버 설정
+server:
+  host: "127.0.0.1"
+  port: "8080"
+
+# 로깅 설정
+logging:
+  level: "info"  # debug, info, warn, error
+  file: "logs/upbit-trader.log"
+  max_size: 100      # 메가바이트
+  max_backups: 5
+  max_age: 30        # 일
+  compress: true
+
+# 트레이딩 설정
+trading:
+  default_strategy: "RSI Reversal"
+  default_profit_target: 3.0   # %
+  default_stop_loss: 2.0       # %
+  max_positions: 5
+  max_position_size: 10.0      # 총 자산의 %
+  max_daily_loss: 5.0          # 총 자산의 %
